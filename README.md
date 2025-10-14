@@ -1,16 +1,47 @@
-# React + Vite
+# Ono.ar - Desarrollo de Software a Medida
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sitio web corporativo de Ono.ar - Desarrollo de software a medida basado en tecnologías web modernas.
 
-Currently, two official plugins are available:
+## 🚀 Tecnologías Utilizadas
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Frontend:** React + Vite
+- **Hosting:** Google Cloud Platform (Static Hosting)
+- **DNS:** Google Cloud DNS
+- **Backend:** Firebase Ecosystem
+- **Email:** Zoho Mail (con dominio @ono.ar)
 
-## React Compiler
+## 📦 Servicios Ofrecidos
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Desarrollo de Software
 
-## Expanding the ESLint configuration
+- Aplicaciones Web Progresivas (PWA)
+- Aplicaciones Móviles
+- APIs y Backend Services
+- Sistemas a Medida
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Infraestructura Cloud
+
+- **Registración de Dominios** - Gestión completa de DNS
+- **Hosting Escalable** - Google Cloud Storage + Load Balancing
+- **Base de Datos** - Firestore, Realtime Database
+- **Autenticación** - Firebase Auth
+- **Serverless Functions** - Google Cloud Functions
+- **Almacenamiento** - Cloud Storage for Firebase
+- **Analytics** - Google Analytics + Firebase Analytics
+- **Mensajería** - Firebase Cloud Messaging
+
+## 🛠️ Configuración del Proyecto
+
+### Prerrequisitos
+
+- Node.js 16+
+- npm o yarn
+- Cuenta Google Cloud Platform
+- Cuenta Firebase
+
+### Instalación
+
+```bash
+npm install
+npm run dev
+```

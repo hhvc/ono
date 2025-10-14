@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./Contact.css";
 
 const Contact = () => {
@@ -7,6 +7,23 @@ const Contact = () => {
     email: "",
     message: "",
   });
+
+  const [contactInfo, setContactInfo] = useState({
+    email: "",
+    phone: "",
+  });
+
+  // Protección contra bots - se ejecuta solo en el cliente
+  useEffect(() => {
+    // Desofuscación simple que los bots no pueden seguir fácilmente
+    const emailParts = ["hectorvazquez.laboral", "gmail", "com"];
+    const phoneParts = ["+54", "9", "351", "547", "8785"];
+
+    setContactInfo({
+      email: `${emailParts[0]}@${emailParts[1]}.${emailParts[2]}`,
+      phone: `${phoneParts[0]} ${phoneParts[1]} ${phoneParts[2]} ${phoneParts[3]}-${phoneParts[4]}`,
+    });
+  }, []);
 
   const handleChange = (e) => {
     setFormData({
@@ -37,15 +54,15 @@ const Contact = () => {
             <div className="contact-details">
               <div className="contact-item">
                 <strong>Email:</strong>
-                <span>info@ono.ar</span>
+                <span id="email-contact">{contactInfo.email}</span>
               </div>
               <div className="contact-item">
                 <strong>Teléfono:</strong>
-                <span>+54 9 11 1234-5678</span>
+                <span id="phone-contact">{contactInfo.phone}</span>
               </div>
               <div className="contact-item">
                 <strong>Ubicación:</strong>
-                <span>Buenos Aires, Argentina</span>
+                <span>Córdoba, Argentina</span>
               </div>
             </div>
           </div>
@@ -62,7 +79,7 @@ const Contact = () => {
               />
             </div>
             <div className="form-group">
-              <label htmlFor="email">Email</label>
+              <label htmlFor="email">Tu Email</label>
               <input
                 type="email"
                 id="email"

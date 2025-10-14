@@ -1,20 +1,35 @@
+import { useState, useEffect } from "react";
 import "./Footer.css";
 
 const Footer = () => {
+  const [contactInfo, setContactInfo] = useState({
+    email: "",
+    phone: "",
+  });
+
+  // Protección contra bots - misma técnica que en Contact
+  useEffect(() => {
+    const emailParts = ["hectorvazquez.laboral", "gmail", "com"];
+    const phoneParts = ["+54", "9", "351", "547", "8785"];
+
+    setContactInfo({
+      email: `${emailParts[0]}@${emailParts[1]}.${emailParts[2]}`,
+      phone: `${phoneParts[0]} ${phoneParts[1]} ${phoneParts[2]} ${phoneParts[3]}-${phoneParts[4]}`,
+    });
+  }, []);
+
   return (
     <footer className="footer">
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
             <h3>ono.ar</h3>
-            <p>
-              Desarrollo de software a medida para impulsar tu negocio digital.
-            </p>
+            <p>¡Impulsá tu negocio con software a medida!</p>
           </div>
           <div className="footer-section">
             <h4>Contacto</h4>
-            <p>info@ono.ar</p>
-            <p>+54 9 11 1234-5678</p>
+            <p>{contactInfo.email}</p>
+            <p>{contactInfo.phone}</p>
           </div>
           <div className="footer-section">
             <h4>Enlaces</h4>
