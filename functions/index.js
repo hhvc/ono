@@ -1,7 +1,7 @@
 const admin = require("firebase-admin");
-const {logger} = require("firebase-functions");
-const {onRequest} = require("firebase-functions/v2/https");
-const {defineSecret, defineString} = require("firebase-functions/params");
+const { logger } = require("firebase-functions");
+const { onRequest } = require("firebase-functions/v2/https");
+const { defineSecret, defineString } = require("firebase-functions/params");
 
 admin.initializeApp();
 
@@ -130,7 +130,7 @@ exports.contactForm = onRequest({
   }
 
   if (req.method !== "POST") {
-    res.status(405).json({success: false, error: "Method Not Allowed"});
+    res.status(405).json({ success: false, error: "Method Not Allowed" });
     return;
   }
 
@@ -138,7 +138,7 @@ exports.contactForm = onRequest({
   const validationError = validatePayload(payload);
 
   if (validationError) {
-    res.status(400).json({success: false, error: validationError});
+    res.status(400).json({ success: false, error: validationError });
     return;
   }
 
@@ -178,7 +178,7 @@ exports.contactForm = onRequest({
       status: "error",
       errorMessage: error.message,
       createdAt: admin.firestore.FieldValue.serverTimestamp(),
-    }, {merge: true});
+    }, { merge: true });
 
     res.status(500).json({
       success: false,
@@ -188,5 +188,5 @@ exports.contactForm = onRequest({
 });
 
 exports.helloWorld = onRequest((req, res) => {
-  res.json({message: "Hola desde Firebase Functions"});
+  res.json({ message: "Hola desde Firebase Functions" });
 });
