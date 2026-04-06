@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 220" role="img" aria-labelledby="title desc">
+  <title id="title">ono.ar logo</title>
+  <desc id="desc">Circular dark logo with ONO lettering and cyan accent line.</desc>
+  <circle cx="110" cy="110" r="100" fill="#0B1220" />
+  <line x1="42" y1="110" x2="178" y2="110" stroke="#22D3EE" stroke-width="6" stroke-linecap="round" />
+  <text
+    x="48"
+    y="150"
+    text-anchor="middle"
+    font-size="110"
+    fill="#FFFFFF"
+    font-family="Sora, Space Grotesk, Manrope, sans-serif"
+    font-weight="600"
+  >
+    O
+  </text>
+  <text
+    x="110"
+    y="135"
+    text-anchor="middle"
+    font-size="110"
+    fill="#FFFFFF"
+    font-family="Sora, Space Grotesk, Manrope, sans-serif"
+    font-weight="600"
+  >
+    n
+  </text>
+  <text
+    x="172"
+    y="150"
+    text-anchor="middle"
+    font-size="110"
+    fill="#FFFFFF"
+    font-family="Sora, Space Grotesk, Manrope, sans-serif"
+    font-weight="600"
+  >
+    O
+  </text>
+</svg>

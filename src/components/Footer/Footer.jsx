@@ -1,41 +1,37 @@
-import { useState, useEffect } from "react";
+import { contactInfo, contactLinks } from "../../data/contactInfo";
 import "./Footer.css";
 
 const Footer = () => {
-  const [contactInfo, setContactInfo] = useState({
-    email: "",
-    phone: "",
-  });
-
-  // Protección contra bots - misma técnica que en Contact
-  useEffect(() => {
-    const emailParts = ["hectorvazquez.laboral", "gmail", "com"];
-    const phoneParts = ["+54", "9", "351", "547", "8785"];
-
-    setContactInfo({
-      email: `${emailParts[0]}@${emailParts[1]}.${emailParts[2]}`,
-      phone: `${phoneParts[0]} ${phoneParts[1]} ${phoneParts[2]} ${phoneParts[3]}-${phoneParts[4]}`,
-    });
-  }, []);
-
   return (
     <footer className="footer">
       <div className="container">
         <div className="footer-content">
           <div className="footer-section">
             <h3>ono.ar</h3>
-            <p>¡Impulsá tu negocio con software a medida!</p>
+            <p>Desarrollo web y software a medida para negocios que necesitan vender mejor y operar sin fricciones.</p>
           </div>
           <div className="footer-section">
             <h4>Contacto</h4>
-            <p>{contactInfo.email}</p>
-            <p>{contactInfo.phone}</p>
+            <p>
+              <a href={contactLinks.email}>{contactInfo.email}</a>
+            </p>
+            <p>
+              <a href={contactLinks.whatsapp} target="_blank" rel="noreferrer">
+                {contactInfo.phoneDisplay}
+              </a>
+            </p>
           </div>
           <div className="footer-section">
-            <h4>Enlaces</h4>
+            <h4>Navegacion</h4>
             <ul>
               <li>
+                <a href="#inicio">Inicio</a>
+              </li>
+              <li>
                 <a href="#servicios">Servicios</a>
+              </li>
+              <li>
+                <a href="#proceso">Proceso</a>
               </li>
               <li>
                 <a href="#contacto">Contacto</a>
@@ -45,8 +41,7 @@ const Footer = () => {
         </div>
         <div className="footer-bottom">
           <p>
-            &copy; {new Date().getFullYear()} ono.ar - Todos los derechos
-            reservados
+            &copy; {new Date().getFullYear()} ono.ar - Cordoba, Argentina
           </p>
         </div>
       </div>

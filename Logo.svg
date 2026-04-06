@@ -1,0 +1,26 @@
+<svg width="220" height="220" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #0B1220; }
+      .text { fill: #FFFFFF; font-family: 'Sora', sans-serif; font-weight: 600; }
+      .accent { stroke: #22D3EE; stroke-width: 6; stroke-linecap: round; }
+    </style>
+  </defs>
+
+  <!-- Fondo -->
+  <circle cx="110" cy="110" r="100" class="bg"></circle>
+
+  <!-- Línea -->
+  <line x1="42" y1="110" x2="178" y2="110" class="accent"></line>
+
+  <!-- Letras -->
+
+  <!-- O izquierda -->
+  <text x="48" y="150" text-anchor="middle" font-size="110" class="text">O</text>
+
+  <!-- n -->
+  <text x="110" y="135" text-anchor="middle" font-size="110" class="text">n</text>
+
+  <!-- O derecha -->
+  <text x="172" y="150" text-anchor="middle" font-size="110" class="text">O</text>
+</svg>

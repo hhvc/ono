@@ -1,75 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap");
+
+:root {
+  color-scheme: light;
+  --bg: #f6efe5;
+  --bg-accent: #fff7ef;
+  --surface: rgba(255, 250, 244, 0.8);
+  --surface-elevated: rgba(255, 252, 248, 0.94);
+  --text: #1e1b18;
+  --text-muted: #62564b;
+  --accent: #d85a2b;
+  --accent-strong: #ab3f17;
+  --accent-soft: #ffd6c7;
+  --secondary: #16352f;
+  --secondary-soft: #d8ece5;
+  --border-soft: rgba(30, 27, 24, 0.08);
+  --border-strong: rgba(216, 90, 43, 0.25);
+  --shadow-card: 0 24px 60px rgba(74, 46, 20, 0.12);
+  --shadow-soft: 0 10px 30px rgba(74, 46, 20, 0.08);
+  --container: 1180px;
+  --radius-lg: 32px;
+  --radius-md: 20px;
+  --radius-sm: 14px;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  min-width: 320px;
+  font-family: "Manrope", sans-serif;
   line-height: 1.6;
-  color: #333;
-  background-color: #fff;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(216, 90, 43, 0.18), transparent 28%),
+    radial-gradient(circle at 85% 15%, rgba(22, 53, 47, 0.16), transparent 24%),
+    linear-gradient(180deg, var(--bg-accent) 0%, var(--bg) 46%, #f8f2ec 100%);
 }
 
 .container {
-  max-width: 1200px;
+  width: min(100% - 2rem, var(--container));
   margin: 0 auto;
-  padding: 0 20px;
 }
 
 .btn {
-  display: inline-block;
-  padding: 12px 24px;
-  border: none;
-  border-radius: 5px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 52px;
+  padding: 0.85rem 1.35rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
 }
 
 .btn-primary {
-  background-color: #2563eb;
-  color: white;
+  background: var(--accent);
+  color: #fff7f1;
+  box-shadow: 0 16px 30px rgba(216, 90, 43, 0.24);
 }
 
 .btn-primary:hover {
-  background-color: #1d4ed8;
+  background: var(--accent-strong);
 }
 
 .btn-secondary {
-  background-color: transparent;
-  color: #2563eb;
-  border: 2px solid #2563eb;
+  background: rgba(255, 255, 255, 0.5);
+  color: var(--text);
+  border-color: var(--border-soft);
 }
 
 .btn-secondary:hover {
-  background-color: #2563eb;
-  color: white;
+  border-color: var(--accent);
+  color: var(--accent-strong);
+  background: rgba(255, 255, 255, 0.88);
 }
 
 section {
-  padding: 80px 0;
+  padding: 6rem 0;
 }
 
 h1,
 h2,
 h3,
 h4 {
-  margin-bottom: 1rem;
+  font-family: "Space Grotesk", sans-serif;
   line-height: 1.2;
+  letter-spacing: -0.03em;
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: clamp(2.8rem, 5vw, 5.5rem);
 }
 
 h2 {
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 3rem;
+  font-size: clamp(2rem, 4vw, 3.5rem);
 }
 
 p {
-  margin-bottom: 1rem;
+  color: var(--text-muted);
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(216, 90, 43, 0.18);
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 4.5rem 0;
+  }
 }

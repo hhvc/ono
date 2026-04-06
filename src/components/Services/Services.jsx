@@ -3,71 +3,114 @@ import "./Services.css";
 const Services = () => {
   const services = [
     {
-      title: "Desarrollo Web a Medida",
+      title: "Landings y sitios con foco en conversion",
       description:
-        "Aplicaciones web modernas con React, Vue y tecnologías de vanguardia. PWAs, SPAs y aplicaciones empresariales escalables.",
-      icon: "🌐",
+        "Paginas pensadas para explicar mejor tu oferta, filtrar consultas y generar una imagen profesional que sostenga el precio de tus servicios.",
+      label: "Captacion",
     },
     {
-      title: "Aplicaciones Móviles",
+      title: "Sistemas internos para ordenar operaciones",
       description:
-        "Apps nativas e híbridas para iOS y Android. Desarrollo cross-platform con React Native y Flutter.",
-      icon: "📱",
+        "Herramientas a medida para ventas, seguimiento, turnos, inventario, gestion de clientes o cualquier flujo que hoy dependa de planillas y mensajes dispersos.",
+      label: "Operacion",
     },
     {
-      title: "APIs y Backend Services",
+      title: "MVPs y productos digitales",
       description:
-        "Sistemas robustos de backend, APIs RESTful/GraphQL, microservicios y bases de datos escalables.",
-      icon: "⚙️",
+        "Versiones iniciales bien recortadas para validar una idea, salir al mercado rapido y decidir con datos si conviene escalar.",
+      label: "Validacion",
     },
     {
-      title: "Registración de Dominios",
+      title: "Integraciones y automatizacion",
       description:
-        "Gestión completa de registro y configuración de nombres de dominio. Asesoramiento en estrategia de marca digital.",
-      icon: "🔗",
+        "Conexion entre formularios, CRM, WhatsApp, email, bases de datos o paneles internos para reducir tareas manuales y errores.",
+      label: "Eficiencia",
+    },
+  ];
+
+  const process = [
+    {
+      step: "01",
+      title: "Diagnostico",
+      description:
+        "Entiendo tu negocio, donde estas perdiendo tiempo o ventas y que deberia resolver el producto para que tenga impacto.",
     },
     {
-      title: "Hosting y Cloud Google",
+      step: "02",
+      title: "Alcance claro",
       description:
-        "Soluciones de hosting en Google Cloud Platform. Storage, Compute Engine, App Engine y Cloud Run.",
-      icon: "☁️",
+        "Propongo una solucion aterrizada, con prioridades, tiempos y criterios de avance. Sin paquetes inflados ni promesas vagas.",
     },
     {
-      title: "Ecosistema Firebase",
+      step: "03",
+      title: "Construccion iterativa",
       description:
-        "Firestore, Authentication, Cloud Functions, Hosting, Storage y Analytics. Desarrollo serverless.",
-      icon: "🔥",
+        "Desarrollo por etapas visibles para que puedas revisar avances temprano y corregir rumbo antes de llegar tarde.",
     },
     {
-      title: "Infraestructura como Código",
+      step: "04",
+      title: "Lanzamiento y mejora",
       description:
-        "Configuración automatizada de infraestructura con Terraform y Deployment Manager.",
-      icon: "🔧",
+        "Entrego una base mantenible, acompanada por medicion, ajustes y siguientes pasos si el proyecto necesita crecer.",
     },
-    {
-      title: "Consultoría Técnica",
-      description:
-        "Asesoramiento especializado en arquitectura cloud, escalabilidad y mejores prácticas.",
-      icon: "💡",
-    },
+  ];
+
+  const fit = [
+    "Negocios de servicios que necesitan una pagina mas convincente y profesional.",
+    "Equipos que ya venden, pero operan con demasiados pasos manuales.",
+    "Emprendimientos o startups que quieren validar un producto antes de invertir de mas.",
   ];
 
   return (
     <section id="servicios" className="services">
       <div className="container">
-        <h2>Servicios Integrales de Desarrollo</h2>
-        <p className="services-subtitle">
-          Ofrecemos soluciones completas desde el dominio hasta la aplicación en
-          producción
-        </p>
+        <div className="section-heading fade-in">
+          <span>Servicios</span>
+          <h2>No necesitas mas tecnologia. Necesitas que la correcta mueva el negocio.</h2>
+          <p>
+            Mi trabajo no es sumarte complejidad, sino construir la pieza digital que falta para vender mejor, responder mas rapido o dejar de depender de procesos improvisados.
+          </p>
+        </div>
         <div className="services-grid">
-          {services.map((service, index) => (
-            <div key={index} className="service-card">
-              <div className="service-icon">{service.icon}</div>
+          {services.map((service) => (
+            <article key={service.title} className="service-card surface-card fade-in">
+              <span className="service-label">{service.label}</span>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
-            </div>
+            </article>
           ))}
+        </div>
+
+        <div id="proceso" className="services-process">
+          <div className="section-heading fade-in">
+            <span>Proceso</span>
+            <h2>Trabajo con foco, criterio tecnico y decisiones faciles de seguir.</h2>
+            <p>
+              Una landing o un sistema interno solo sirve si resuelve el problema correcto. Por eso el proceso esta pensado para bajar incertidumbre desde el primer contacto.
+            </p>
+          </div>
+
+          <div className="process-grid">
+            {process.map((item) => (
+              <article key={item.step} className="process-card fade-in">
+                <span>{item.step}</span>
+                <h3>{item.title}</h3>
+                <p>{item.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        <div className="fit-panel surface-card fade-in">
+          <div>
+            <span>Encaje ideal</span>
+            <h3>Este enfoque funciona especialmente bien si ya existe una necesidad de negocio concreta.</h3>
+          </div>
+          <div className="fit-list">
+            {fit.map((item) => (
+              <p key={item}>{item}</p>
+            ))}
+          </div>
         </div>
       </div>
     </section>
