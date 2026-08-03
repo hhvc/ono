@@ -9,3 +9,4 @@ export const contactLinks = {
     email: `mailto:${contactInfo.email}`,
     whatsapp: `https://wa.me/${contactInfo.phoneLink}`,
 };
+
