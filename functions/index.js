@@ -7,7 +7,7 @@ admin.initializeApp();
 
 const RESEND_API_KEY = defineSecret("RESEND_API_KEY");
 const CONTACT_TO_EMAIL = defineString("CONTACT_TO_EMAIL", {
-  default: "hectorvazquez.laboral@gmail.com",
+  default: "contacto@ono.ar",
 });
 const CONTACT_FROM_EMAIL = defineString("CONTACT_FROM_EMAIL", {
   default: "ono.ar <onboarding@resend.dev>",

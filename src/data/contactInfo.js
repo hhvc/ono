@@ -1,5 +1,5 @@
 export const contactInfo = {
-    email: "hectorvazquez.laboral@gmail.com",
+    email: "contacto@ono.ar",
     phoneDisplay: "+54 9 351 547-8785",
     phoneLink: "5493515478785",
     location: "Cordoba, Argentina",
